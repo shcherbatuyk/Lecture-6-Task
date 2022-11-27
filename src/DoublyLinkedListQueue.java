@@ -1,14 +1,4 @@
-public class DoublyLinkedListQueue {
-    class Node {
-        public int data;
-        public Node next;
-        public Node prev;
-
-    }
-
-    private Node head;
-    private Node tail;
-    int size;
+public class DoublyLinkedListQueue extends DoublyLinkedList {
 
     public void enqueue(int data) { // enqueue method
         Node newNode = new Node();
@@ -34,16 +24,13 @@ public class DoublyLinkedListQueue {
         return temp;
     }
 
-    public int size() { // returns size of list
-        return size;
-    }
 
     public boolean isEmpty() { // check if list is empty
         if (size == 0) {
             return true;
-        } else {
-            return false;
         }
+            return false;
+
     }
 
     public void display() {  // print node-by-node values

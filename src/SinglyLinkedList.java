@@ -1,5 +1,5 @@
 public class SinglyLinkedList {
-    class Node {
+    static class Node {
         int data;
         Node next;
 
@@ -10,20 +10,6 @@ public class SinglyLinkedList {
     }
 
     public Node head = null;
-    public Node tail = null;
-
-    public void addNode(int data) {     //Create a new node
-
-        Node newNode = new Node(data);
-
-        if (head == null) {
-            head = newNode;
-            tail = newNode;
-        } else {
-            tail.next = newNode;
-            tail = newNode;
-        }
-    }
 
     public void push(int data) { // push an item in list
         Node newHeadNode = new Node(data);
@@ -31,8 +17,10 @@ public class SinglyLinkedList {
         head = newHeadNode;
     }
 
-    public void pop() { // pop first item
+    public int pop() { // pop first item
+        int val = head.data;
         head = head.next;
+        return val;
     }
 
     public int top() { // get data of first item
@@ -59,9 +47,8 @@ public class SinglyLinkedList {
     public boolean isEmpty() { // check if list is empty
         if (head == null) {
             return true;
-        } else {
-            return false;
         }
+            return false;
     }
 
     public void display() { // printing nodes values node-by-node

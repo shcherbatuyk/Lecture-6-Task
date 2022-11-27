@@ -2,17 +2,17 @@ public class Main {
     public static void main(String[] args) {
         SinglyLinkedList sList = new SinglyLinkedList(); // Singly Linked List demonstration
 
-        sList.addNode(1);
-        sList.addNode(2);
-        sList.addNode(3);
-        sList.addNode(4);
+        sList.push(1);
+        sList.push(2);
+        sList.push(3);
+        sList.push(4);
 
         sList.display();
 
         sList.push(12);
         sList.display();
 
-        sList.pop();
+        System.out.println("Popped node: "+sList.pop());
         sList.display();
 
         System.out.println("sList top: " + sList.top());
@@ -45,7 +45,7 @@ public class Main {
 
         dList.display();
 
-        dList.add(2, 9);
+        dList.addByIndex(2, 9);
         dList.display();
 
         System.out.println("dList size: " + dList.size);

@@ -1,14 +1,14 @@
 public class DoublyLinkedList {
-    class Node {
+    static class Node {
         public int data;
         public DoublyLinkedList.Node next;
         public DoublyLinkedList.Node prev;
 
     }
 
-    private DoublyLinkedList.Node head;
-    private DoublyLinkedList.Node tail;
-    int size;
+    public DoublyLinkedList.Node head;
+    public DoublyLinkedList.Node tail;
+    public int size;
 
     public void addFirst(int data) {  // add first item
         Node newNode = new Node();
@@ -36,21 +36,20 @@ public class DoublyLinkedList {
         size++;
     }
 
-    public void add(int index, int data) // add after item by index
+    public void addByIndex(int index, int data) // add after item by index
     {
         Node newNode = new Node();
         newNode.data = data;
         newNode.next = null;
         newNode.prev = null;
 
-        if (index < 1) {
-            System.out.println("Index can't be <1.");
+        if (index == 0) {               // if index == 0 ==> addFirst()
+            addFirst(data);
         } else if (index == 1) {         // if index == 1 ==> adding a head
             newNode.next = head;
             head.prev = newNode;
             head = newNode;
         } else {
-
             Node tempNode = new Node();
             tempNode = head;
             for (int i = 1; i < index - 1; i++) {
@@ -87,15 +86,11 @@ public class DoublyLinkedList {
         System.out.println();
     }
 
-    private int size() { // return size of list
-        return size;
-    }
-
     public boolean isEmpty() { // checking if empty
         if (size == 0) {
             return true;
-        } else {
-            return false;
         }
+            return false;
+        
     }
 }
